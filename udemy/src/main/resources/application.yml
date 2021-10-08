@@ -1,3 +1,7 @@
 micronaut:
   application:
     name: udemy
+
+hello:
+  service:
+    greeting: "Hello from service"
