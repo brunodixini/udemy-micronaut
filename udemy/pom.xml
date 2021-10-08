@@ -20,6 +20,7 @@
     <micronaut.version>3.0.3</micronaut.version>
     <exec.mainClass>mn.stock.broker.com.danielprinz.Application</exec.mainClass>
     <micronaut.runtime>netty</micronaut.runtime>
+    <lombok.version>1.18.12</lombok.version>
   </properties>
 
   <repositories>
@@ -80,6 +81,12 @@
       <artifactId>logback-classic</artifactId>
       <scope>runtime</scope>
     </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${lombok.version}</version>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
 
   <build>
@@ -97,6 +104,11 @@
           <!-- <useIncrementalCompilation>false</useIncrementalCompilation> -->
 
           <annotationProcessorPaths combine.children="append">
+            <path>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+              <version>${lombok.version}</version>
+            </path>
             <path>
               <groupId>io.micronaut</groupId>
               <artifactId>micronaut-http-validation</artifactId>
