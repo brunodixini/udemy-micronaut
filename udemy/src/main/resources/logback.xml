@@ -9,6 +9,8 @@
         </encoder>
     </appender>
 
+    <logger name="mn.stock.broker.com.danielprinz" level="DEBUG" />
+
     <root level="info">
         <appender-ref ref="STDOUT" />
     </root>
