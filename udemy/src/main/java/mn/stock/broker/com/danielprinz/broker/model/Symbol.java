@@ -4,6 +4,10 @@ public class Symbol {
 
     private String value;
 
+    public Symbol() {
+    }
+
+
     public Symbol(String value) {
         this.value = value;
     }
