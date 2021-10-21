@@ -10,7 +10,7 @@ public class CustomError {
     public CustomError(int status, String error, String message, String path) {
         this.status = status;
         this.error = error;
-        this.message = message;
+
         this.path = path;
     }
 

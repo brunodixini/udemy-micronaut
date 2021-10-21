@@ -80,8 +80,21 @@
       <scope>compile</scope>
     </dependency>
     <dependency>
+      <groupId>io.micronaut.security</groupId>
+      <artifactId>micronaut-security-jwt</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.micronaut.security</groupId>
+      <artifactId>micronaut-security-annotations</artifactId>
+    </dependency>
+    <dependency>
       <groupId>javax.annotation</groupId>
       <artifactId>javax.annotation-api</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.swagger.core.v3</groupId>
+      <artifactId>swagger-annotations</artifactId>
       <scope>compile</scope>
     </dependency>
     <dependency>
@@ -101,6 +114,7 @@
       <plugin>
         <groupId>io.micronaut.build</groupId>
         <artifactId>micronaut-maven-plugin</artifactId>
+        <version>3.0.2</version>
       </plugin>
       
       <plugin>
@@ -121,8 +135,15 @@
               <artifactId>micronaut-http-validation</artifactId>
               <version>${micronaut.version}</version>
             </path>
+            <path>
+              <groupId>io.micronaut.openapi</groupId>
+              <artifactId>micronaut-openapi</artifactId>
+              <version>2.1.1</version>
+            </path>
           </annotationProcessorPaths>
+          <fork>true</fork>
           <compilerArgs>
+            <arg>-J-Dmicronaut.opemapi.views.spec=redoc.enable=true,swagger-ui.enable=true,swagger-ui.theme=flattop</arg>
             <arg>-Amicronaut.processing.group=mn.stock.broker.com.danielprinz</arg>
             <arg>-Amicronaut.processing.module=udemy</arg>
           </compilerArgs>
