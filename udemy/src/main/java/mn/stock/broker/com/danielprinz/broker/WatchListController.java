@@ -2,11 +2,13 @@ package mn.stock.broker.com.danielprinz.broker;
 
 import io.micronaut.http.MediaType;
 import io.micronaut.http.annotation.*;
+import io.micronaut.security.annotation.Secured;
+import io.micronaut.security.rules.SecurityRule;
 import mn.stock.broker.com.danielprinz.broker.model.Watchlist;
 import mn.stock.broker.com.danielprinz.broker.store.InMemoryAccountStore;
 
 import java.util.UUID;
-
+ @Secured(SecurityRule.IS_AUTHENTICATED)
 @Controller("/account/watchlist")
 public class WatchListController {
 
